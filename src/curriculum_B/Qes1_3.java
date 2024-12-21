@@ -1,36 +1,53 @@
 package curriculum_B;
-
+// Scannerクラスを使用するためのインポート処理
+import java.util.Scanner;
 public class Qes1_3 {
 
 	public static void main(String[] args) {
 		/*
-		 * [概要]コンソールにユーザー名が入力できるようにする処理。
-		 * [詳細]Scannerクラスを使用してコンソールに文字を入力できるようにする。
+		 * [概要]課題1.コンソールにユーザー名が入力できるようにする処理。
+		 * [詳細]Scannerクラスを使用してコンソールに文字を入力,出力できるようにする。
 		 */
 		
-		// 変数を作成し、初期化する処理
-		java.util.Scanner username = new java.util.Scanner(System.in);
-		// 変数strに文字列の入力を受け取る。
-			String str = username.next();
+		// Scannerクラスのオブジェクトを生成する。
+		Scanner scanner = new Scanner(System.in);
 		
 		/*
-		 * [概要]条件分岐処理。
-		 * [詳細]コンソールに入力された内容によって出力される文字列が変わるようにする。
+		 *  [概要]while文を使用してコンソール入力の繰り返し
+		 */
+		while(true) {
+			// 入力された値をusernameに受け取る
+			String  username = scanner.next();
+		/*
+		 * [概要]課題1.条件定義の処理
+		 * [詳細]if文を使用し、文字数が10文字より大きい場合「名前を10文字以内にしてください」と出力する。
 		 */
 		
-		// if文で条件の定義
-		if(str.length() > 10) {
-			// 文字数が10文字以上であれば下記をコンソールに出力
+		// ifを使用した条件分岐 length()メソッドを使用し、入力された文字数を取得する。
+		if (username.length() > 10) {
+			// usernameの文字数が10文字より大きい場合にコンソールに出力させる処理。
 			System.out.println("「名前を10文字以内にしてください」");
-		 // 条件の追加。
-		} else if(str == "") {
-			// 入力された文字数が0以下なら下記をコンソールに出力
+		//else if により条件分岐を追加。
+		} else if (username.length() == 0 || username == null) {
+			// usernameの文字数が0もしくはnullの場合にコンソールに出力させる処理
 			System.out.println("「名前を入力してください」");
-			// 上記条件に当てはまらなければ下記の処理を実行させる。
+			// matchesメソッドを使用して、usernameが半角英数字のみで構成されているかどうかを取得。
+		} else if (!username.matches("^[0-9a-zA-z]+$")){
+			// 半角英数字のみではない場合にコンソールに表示する文字列
+			System.out.println("「半角英数字のみで名前を入力してください」");
+			// 上記条件以外なら以下の処理を実施。
 		} else {
-			System.out.println("ユーザー名" + str + "を登録しました");
+			// 入力された値が適正なら表示する文字列
+			System.out.println("ユーザー名「" + username + "」を登録しました。");
+			// 繰り返し処理の終了
+			break;
+			}
 		}
-		
+		/*
+		 * [概要] 配列を作成する処理
+		 * [詳細] じゃんけんの選択肢を配列でまとめる。
+		 */
+		// 配列の宣言と値の読み込み
+		String[] rps = {"グー","チョキ","パー"};
 	}
-
 }

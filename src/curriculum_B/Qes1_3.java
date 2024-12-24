@@ -11,13 +11,15 @@ public class Qes1_3 {
 		
 		// Scannerクラスのオブジェクトを生成する。
 		Scanner scanner = new Scanner(System.in);
+		// [修正] ユーザー名を格納するための変数を定義。
+		String username = null;
 		
 		/*
 		 *  [概要]while文を使用してコンソール入力の繰り返し
 		 */
 		while(true) {
 			// 入力された値をusernameに受け取る
-			String  username = scanner.next();
+			username = scanner.nextLine();
 		/*
 		 * [概要]課題1.条件定義の処理
 		 * [詳細]if文を使用し、文字数が10文字より大きい場合「名前を10文字以内にしてください」と出力する。
@@ -27,8 +29,9 @@ public class Qes1_3 {
 		if (username.length() > 10) {
 			// usernameの文字数が10文字より大きい場合にコンソールに出力させる処理。
 			System.out.println("「名前を10文字以内にしてください」");
-		//else if により条件分岐を追加。
-		} else if (username.length() == 0 || username == null) {
+		//else if により条件分岐を追加。 
+			// [修正] username == 0 →　username.isEmpty() (isEmptyメソッドを使用してみた)
+		} else if (username.isEmpty() || username == null) {
 			// usernameの文字数が0もしくはnullの場合にコンソールに出力させる処理
 			System.out.println("「名前を入力してください」");
 			// matchesメソッドを使用して、usernameが半角英数字のみで構成されているかどうかを取得。
@@ -39,15 +42,11 @@ public class Qes1_3 {
 		} else {
 			// 入力された値が適正なら表示する文字列
 			System.out.println("ユーザー名「" + username + "」を登録しました。");
-			// 繰り返し処理の終了
+			// ループ終了
+			scanner.close();
 			break;
 			}
 		}
-		/*
-		 * [概要] 配列を作成する処理
-		 * [詳細] じゃんけんの選択肢を配列でまとめる。
-		 */
-		// 配列の宣言と値の読み込み
-		String[] rps = {"グー","チョキ","パー"};
+		
 	}
 }

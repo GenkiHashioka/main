@@ -3,6 +3,12 @@ package curriculum_B;
 public class Qes4 {
 
 	public static void main(String[] args) {
+		// 最初に表示される文字列
+		System.out.println("例題4");
+		// 改行
+		System.out.println();
+		// 改行
+		System.out.println();
 		/*
 		 * [概要] for文を使用した九九の表を表示する処理
 		 * [詳細] for文を使用し、九九の表を作成する

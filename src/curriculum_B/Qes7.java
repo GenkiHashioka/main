@@ -53,6 +53,7 @@ public class Qes7 {
 			// 改行
 			System.out.println();
 		}
+		scanner.close();
 		/*
 		 * [概要]一人ひとりの平均点を求める処理
 		 * [詳細]拡張for文を使用して人数分の平均点を算出、出力する。

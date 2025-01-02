@@ -18,6 +18,7 @@ public class Qes6 {
 		 */
 		// コンソールにて検索された文字列を配列に格納する
 		String[] search = scanner.nextLine().split("、");
+		scanner.close();
 		/*
 		 * [概要]乱数の取得処理
 		 * [詳細]残り台数を0~11の乱数で取得する。

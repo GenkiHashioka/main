@@ -38,7 +38,7 @@ public class Qes6 {
 			 * [概要] 乱数の取得処理
 			 */
 			// 整数0~11の値を変数numに取得する
-			int num =random.nextInt(12);
+			int num = random.nextInt(12);
 			// コンソールに表示される文字列を変数resltに代入。
 			String result = str + "の残り台数は" + num + "台です";
 			/*
